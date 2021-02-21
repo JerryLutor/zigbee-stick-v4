@@ -10,16 +10,16 @@
 - 2 LED for indication
 - Compatible with [Z2M](https://www.zigbee2mqtt.io/)
 - SMA antenna port for an external antenna
-- Self-programming via the TI [CC-series serial bootloader](http://www.ti.com/lit/an/swra466c/swra466c.pdf). If is not disabled in code.
+- Self-programming via the [cc2538-bsl](https://github.com/JelmerT/cc2538-bsl).No external programmer needed! Push BSL button to trigger this mode.
 - Communicates via the common CH340E/CH340C USB-UART Bridge
 
-Boards fit in [v.3 Stick Case](https://github.com/mercenaruss/zigbee-stick-v4/tree/main/files/STL) designed by [Jager](https://github.com/Jager-f)
+Boards fits in [v.3 Stick Case](https://github.com/mercenaruss/zigbee-stick-v4/tree/main/files/STL) designed by [Jager](https://github.com/Jager-f)
 
 ## Revisions
 
 There are 2 versions of stick:
-- [CH340E version](https://github.com/mercenaruss/zigbee-stick-v4/blob/main/files/gerber/Gerber_Zigbee%20Stick%20v4.0%20-%20CH340E.zip), more compact,all elements on one side
-- [CH340C version](https://github.com/mercenaruss/zigbee-stick-v4/blob/main/files/gerber/Gerber_Zigbee%20Stick%20v4.0%20-%20CH340C.zip), more easy to solder and includes ESD protection
+- [CH340E version](https://github.com/mercenaruss/zigbee-stick-v4/blob/main/files/gerber/Gerber_Zigbee%20Stick%20v4.0%20-%20CH340E.zip), more compact,all elements on one side.
+- [CH340C version](https://github.com/mercenaruss/zigbee-stick-v4/blob/main/files/gerber/Gerber_Zigbee%20Stick%20v4.0%20-%20CH340C.zip), more easy to solder and includes ESD protection.
 
 Both versions use the same [3D Model Case](/files/STL)
 
@@ -51,6 +51,17 @@ Next items are not available on LCSC,you can get them on Aliexpress:
  - [RF-BM-2652P1/P2](https://letyshops.com/r/aliexpress-f6e2c6d280d5)
  - [RP-SMA Antenna PCB Connector 1.2/1.6mm](https://letyshops.com/r/aliexpress-e6704ce906c0)
  - [RP-SMA Antenna Female - Inner hole](https://letyshops.com/r/aliexpress-14123aa4ecca)
+### Firmware
+
+Module is compatible with [Z2M](https://www.zigbee2mqtt.io/).
+Firmware [CC1352P2_CC2652P](https://github.com/Koenkk/Z-Stack-firmware/blob/develop/coordinator/Z-Stack_3.x.0/bin/CC1352P2_CC2652P_launchpad_20201113.zip).
+
+Defuault TX Power is 20dbm. It can be lowered in zigbee2mqtt config section:
+
+    experimental:
+      transmit_power: 5
+
+Available TX power values: -20,-18,-15,-12,-10,-9,-6,-5,-3,0,1..5,14..20
 
 ### Downloads
  - [Gerbers](https://github.com/mercenaruss/zigbee-stick-v4/tree/main/files/gerber)
@@ -59,8 +70,8 @@ Next items are not available on LCSC,you can get them on Aliexpress:
  - [LCSC Boom File](https://github.com/mercenaruss/zigbee-stick-v4/blob/main/files/BOM_Zigbee%20Stick%204.0%20CH340E-C.csv)
 
 ### Thanks go to:
-- [@Jager](https://github.com/jager-f), [@Palco](https://github.com/palko), [@Egony](https://github.com/egony) for design review and comments
-- Name Credit goes to [nurikk](https://github.com/nurikk), before board had a very boring name. Many thanks to him for a lot of work on Z2M and DIY Devices.
+- [@Jager](https://github.com/jager-f), [@Palco](https://github.com/palko), [@Egony](https://github.com/egony), [@electrolama](https://github.com/electrolama) for design review and comments
+- Name Credit goes to [nurikk](https://github.com/nurikk), before board had a very boring name. Many thanks to him for a lot of work on [Z2M](https://www.zigbee2mqtt.io/) and DIY Devices.
 
 ## Contact 
 For general enquiries, suggestions and errors spotted: Email me at radu@grecu.info or write me directly in [Telegram](https://t.me/mercenaruss). Community contributions to this page are very much encouraged so you could also send pull requests with your proposed changes.
